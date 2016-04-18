@@ -160,7 +160,7 @@ var is_last  = pair => is_empty(TAIL(pair));
 //   do_fact - Calculate one step in the factorial calculation
 // ********************************************************************
 var do_fib = fib_next => (n,a,b) => n < 1 ? a : fib_next(n-1,b,a+b);
-var fib    = Y(do_fib);
+var fib    = n => Y(do_fib)(n,0,1);
 
 var do_fact = fact_next => n => n < 2 ? 1 : n * fact_next(n-1);
 var fact    = Y(do_fact);
