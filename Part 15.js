@@ -237,8 +237,8 @@ var REDUCE = Y(make_reduc);
 // Define COUNT, FACTORIAL and SUM functions to be applied to a list
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 var COUNT     = list => REDUCE(list)(dont_care => acc => SUCC(acc))(ZERO);
-var FACTORIAL = REDUCE(MAP(to_church)(list))(MULTIPLY)(ONE);  
-var SUM       = REDUCE(MAP(to_church)(list)(ADD)(ONE);
+var FACTORIAL = list => REDUCE(MAP(to_church)(list))(MULTIPLY)(ONE);  
+var SUM       = list => REDUCE(MAP(to_church)(list))(ADD)(ONE);
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // Define the FOLDL and FOLDR functions
