@@ -307,11 +307,11 @@ var do_div_magnitudes =
          (TAIL(pair));
 
 
-var DIV = num1 => num2 =>
-   NUMBER(NOT(XOR(SIGN(num1))(SIGN(num2))))
+var DIV = dividend => divisor =>
+   NUMBER(NOT(XOR(SIGN(dividend))(SIGN(divisor))))
          (Y(do_div_magnitudes)
            (ZERO_MAGNITUDE)
-           (PAIR(ABS(num1))(ABS(num2))));
+           (PAIR(ABS(dividend))(ABS(divisor))));
 
 // Helper functions to reify the NUMBER function returned by DIV
 var magnitude_quot = numFn => magnitude(HEAD(TAIL(numFn)));
